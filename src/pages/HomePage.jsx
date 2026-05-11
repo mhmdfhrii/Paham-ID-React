@@ -1,0 +1,18 @@
+import React from "react";
+import MainTrending from "../components/MainTrending";
+import Main from "../components/Main";
+import Newsletter from "../components/Newsletter";
+
+export default function HomePage() {
+  return (
+    <main className="main-wrapper">
+      <section className="bento-section">
+        <Main />
+      </section>
+      <section className="list-section">
+        <MainTrending />
+        <Newsletter />
+      </section>
+    </main>
+  );
+}

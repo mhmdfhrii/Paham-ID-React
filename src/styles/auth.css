@@ -1,0 +1,379 @@
+/* =============================================
+   AUTH.CSS — Paham.ID
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   SIGN IN — full background image, no card
+   ============================================= */
+
+.signin-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.signin-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/signinbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.signin-form-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 24px;
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo bulat kecil */
+.signin-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.signin-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.signin-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signin-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.signin-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+
+.req { color: #e53e3e; margin-left: 2px; }
+
+.signin-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.signin-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.signin-input-wrap input {
+  width: 100%;
+  background: #17334f;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 12px 42px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.signin-input-wrap input::placeholder { color: #5a7a99; }
+
+.signin-input-wrap input:focus {
+  border-color: #2a6099;
+  background: #1c3e5e;
+  box-shadow: 0 0 0 3px rgba(42,96,153,0.2);
+}
+
+.signin-eye-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6b8aaa;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.signin-eye-btn:hover { color: #fff; }
+
+.signin-btn {
+  margin-top: 4px;
+  width: 100%;
+  padding: 13px;
+  background: #f0a500;
+  color: #0d2137;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 18px rgba(240,165,0,0.4);
+}
+.signin-btn:hover { background: #e09400; transform: translateY(-1px); }
+
+.signin-footer {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+}
+.signin-footer a {
+  color: #f0a500;
+  font-weight: 700;
+  text-decoration: none;
+}
+.signin-footer a:hover { text-decoration: underline; }
+
+
+/* =============================================
+   REGISTER — background Reg.png, card split
+   ============================================= */
+
+.register-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0d1f33;
+}
+
+.register-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/Reg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Card split dua kolom */
+.register-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  width: 100%;
+  max-width: 880px;
+  min-height: 600px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  animation: fadeUp 0.5s cubic-bezier(0.22,1,0.36,1) both;
+  margin: 24px;
+}
+
+/* Kiri — putih */
+.register-left {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.register-logo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.register-logo-icon {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 22px;
+  box-shadow: 0 8px 28px rgba(26,60,94,0.15);
+}
+
+.register-logo-text {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Kanan — navy gelap */
+.register-right {
+  background: #132d47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 44px 40px 36px;
+}
+
+.register-form-inner {
+  width: 100%;
+  max-width: 360px;
+}
+
+.register-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.register-subtitle {
+  font-size: 0.83rem;
+  color: #6b8aaa;
+  margin-bottom: 22px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+}
+
+.register-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.register-input-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.register-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.register-icon {
+  position: absolute;
+  left: 13px;
+  color: #6b8aaa;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.register-input-wrap input {
+  width: 100%;
+  background: #17334f;
+  border: 1.5px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 11px 40px 11px 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.register-input-wrap input::placeholder { color: #5a7a99; }
+.register-input-wrap input:focus {
+  border-color: #2a6099;
+  background: #1c3e5e;
+  box-shadow: 0 0 0 3px rgba(42,96,153,0.2);
+}
+
+.register-eye-btn {
+  position: absolute;
+  right: 11px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6b8aaa;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.register-eye-btn:hover { color: #fff; }
+
+.register-btn {
+  margin-top: 6px;
+  width: 100%;
+  padding: 12px;
+  background: #f0a500;
+  color: #0d2137;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 18px rgba(240,165,0,0.35);
+}
+.register-btn:hover { background: #e09400; transform: translateY(-1px); }
+
+.register-footer {
+  margin-top: 16px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+}
+.register-footer a {
+  color: #f0a500;
+  font-weight: 700;
+  text-decoration: none;
+}
+.register-footer a:hover { text-decoration: underline; }
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 680px) {
+  .register-card {
+    grid-template-columns: 1fr;
+    margin: 16px;
+  }
+  .register-left { display: none; }
+  .register-right { padding: 40px 28px; border-radius: 28px; }
+  .signin-form-wrapper { padding: 0 20px; }
+}
+

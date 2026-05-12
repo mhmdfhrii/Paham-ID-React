@@ -8,27 +8,33 @@ export default function SignInPage() {
 
   return (
     <main className="signin-page">
-      {/* Background penuh dari signinbg.png — no card */}
-      <div className="signin-bg" />
+      <div className="signin-bg-container" />
 
       <div className="signin-form-wrapper">
-        <img src="/img/logosignin.png" alt="Paham.ID" className="signin-logo" />
+        {/* Kontainer logo dengan class baru untuk styling bulat */}
+        <div className="signin-logo-container">
+          <img 
+            src="/img/logoregist.png" 
+            alt="Paham.ID" 
+            className="signin-logo-circle-custom" 
+          />
+        </div>
+
         <h1 className="signin-title">Sign In</h1>
 
-        <div className="signin-form">
-
+        <form className="signin-form" onSubmit={(e) => e.preventDefault()}>
           <div className="signin-input-group">
-            <label>Email / Username <span className="req">*</span></label>
+            <label>Email <span className="req">*</span></label>
             <div className="signin-input-wrap">
-              <Mail size={16} className="signin-icon" />
-              <input type="text" placeholder="Enter your email or username" />
+              <Mail size={18} className="signin-icon" />
+              <input type="email" placeholder="Enter your email or Usn" />
             </div>
           </div>
 
           <div className="signin-input-group">
             <label>Password <span className="req">*</span></label>
             <div className="signin-input-wrap">
-              <Lock size={16} className="signin-icon" />
+              <Lock size={18} className="signin-icon" />
               <input
                 type={showPass ? "text" : "password"}
                 placeholder="Enter your password"
@@ -37,15 +43,14 @@ export default function SignInPage() {
                 type="button"
                 className="signin-eye-btn"
                 onClick={() => setShowPass(v => !v)}
-                tabIndex={-1}
               >
-                {showPass ? <EyeOff size={15} /> : <Eye size={15} />}
+                {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
             </div>
           </div>
 
-          <button type="button" className="signin-btn">Sign In</button>
-        </div>
+          <button type="submit" className="signin-btn">Sign In</button>
+        </form>
 
         <p className="signin-footer">
           Don't have an account? <Link to="/register">Register Now</Link>

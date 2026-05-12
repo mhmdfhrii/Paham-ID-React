@@ -6,7 +6,7 @@ const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname.toLowerCase();
 
-  // Fix: /login → /signin sesuai route di App.jsx
+  // Memastikan navbar hilang di halaman auth sesuai route App.jsx
   const isAuthPage = currentPath === '/signin' || currentPath === '/register';
   if (isAuthPage) return null;
 
@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
 
-        {/* LOGO — bisa diklik ke home */}
+        {/* LOGO */}
         <div className="navbar-logo">
           <Link to="/" className="logo-icon">
             <img src="/img/Group2.png" className="logo-img" alt="Logo" />
@@ -22,17 +22,24 @@ const Navbar = () => {
         </div>
 
         <ul className="navbar-menu">
+          {/* Perbaikan: to="/" sesuai dengan HomePage */}
           <li className={`menu-item ${currentPath === '/' ? 'active' : ''}`}>
             <Link to="/">Home</Link>
           </li>
+          
+          {/* Perbaikan: to="/news" bukan path folder */}
           <li className={`menu-item ${currentPath === '/news' ? 'active' : ''}`}>
-            <Link to="/pages/NewsPage">News</Link>
+            <Link to="/news">News</Link>
           </li>
+          
+          {/* Perbaikan: to="/trending" sesuai route */}
           <li className={`menu-item ${currentPath === '/trending' ? 'active' : ''}`}>
-            <Link to="/TrendingPage">Trending</Link>
+            <Link to="/trending">Trending</Link>
           </li>
+          
+          {/* Perbaikan: to="/saved" sesuai route */}
           <li className={`menu-item ${currentPath === '/saved' ? 'active' : ''}`}>
-            <Link to="/pages/SavedPage">Saved</Link>
+            <Link to="/saved">Saved</Link>
           </li>
         </ul>
 
@@ -50,7 +57,6 @@ const Navbar = () => {
               <img src="/img/notif.png" className="icon-img" alt="notif" />
             </button>
 
-            {/* Avatar → ke Sign In */}
             <Link to="/signin" style={{ display: 'flex' }}>
               <button className="icon-btn profile-btn">
                 <img src="/img/acc.png" className="icon-img account-img" alt="account" />

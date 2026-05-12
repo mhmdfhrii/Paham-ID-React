@@ -354,3 +354,87 @@
   gap: 40px;
   margin: 40px 0;
 }
+
+/* Container Utama */
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Grid Wrapper */
+.bento-grid {
+  display: flex;
+  gap: 20px;
+  height: 500px; /* Tentukan tinggi tetap agar simetris */
+}
+
+/* KOLOM KIRI (Besar) */
+.bento-link {
+  flex: 2; /* Mengambil 2 bagian ruang */
+  text-decoration: none;
+}
+
+.bento-main {
+  height: 100%;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* KOLOM KANAN (Kumpulan Kotak Kecil) */
+.bento-side {
+  flex: 1; /* Mengambil 1 bagian ruang */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bento-small-link {
+  flex: 1; /* Membagi kolom kanan menjadi 2 kotak sama rata secara vertikal */
+  text-decoration: none;
+}
+
+.bento-small {
+  height: 100%;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+/* Efek Hover */
+.bento-main:hover, .bento-small:hover {
+  transform: scale(1.01);
+}
+
+/* Overlay Teks agar terbaca */
+.bento-overlay {
+  padding: 30px;
+  color: white;
+  width: 100%;
+}
+
+.cat-label-special {
+  background: #b31312;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.heavitas-font {
+  font-size: 2.5rem;
+  margin: 15px 0;
+  line-height: 1.1;
+}

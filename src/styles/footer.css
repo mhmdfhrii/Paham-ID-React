@@ -1,243 +1,89 @@
-/* =============================================
-   FOOTER.CSS — Paham.ID
-   ============================================= */
-
 .footer-container-custom {
-  background-color: #e9ecef;
-  width: 100%;
-  padding: 56px 0 32px;
-  margin-top: 60px;
+  background-color: #E9ECEF;
+  width: 100vw;              /* Lebar penuh layar */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;        /* Pusatkan ulang */
+  margin-right: -50vw;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .footer-content-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  align-items: center;
+  gap: 20px;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
 }
 
-/* ── ROW 1: top ──────────────────────────────── */
-.footer-top-row {
-  display: grid;
-  grid-template-columns: 1.4fr 1.2fr 1.4fr;
-  gap: 48px;
-  align-items: flex-start;
-  padding-bottom: 40px;
-}
-
-/* Brand */
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
+/* Container untuk kedua gambar logo */
 .footer-logo-box {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 50px;
 }
 
+/* Ukuran Logo Bulat */
 .footer-icon-final {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
+  height: 50px;
+  /* Tambahan untuk membuat logo bulat */
+  aspect-ratio: 1 / 1; /* Memastikan lebar dan tinggi sama agar bulat sempurna */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  object-fit: cover; /* Agar gambar di dalamnya tidak gepeng */
+  margin-left: 40px;
+  width: auto;
 }
 
+/* Ukuran Tulisan Paham.ID */
 .footer-text-final {
-  height: 28px;
+  height: 40px;
   width: auto;
   object-fit: contain;
-}
+  margin-left: 3px;
+  }
 
-.footer-tagline {
-  font-size: 13px;
-  color: #6c757d;
-  line-height: 1.6;
-  max-width: 220px;
-}
-
-.footer-tagline em {
-  font-style: italic;
-  color: #343a40;
-  font-weight: 600;
-}
-
-/* Nav Kolom */
-.footer-nav-cols {
+/* Container Link Navigasi */
+.footer-links-row {
   display: flex;
-  gap: 40px;
-}
-
-.footer-nav-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-col-heading {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.8px;
-  color: #343a40;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.footer-nav-col a {
-  text-decoration: none;
-  font-size: 13px;
-  color: #6c757d;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.footer-nav-col a:hover {
-  color: #1a3c5e;
-}
-
-/* Newsletter mini */
-.footer-newsletter {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-newsletter p {
-  font-size: 13px;
-  color: #6c757d;
-  line-height: 1.5;
-  margin-top: 2px;
-}
-
-.footer-email-row {
-  display: flex;
-  gap: 0;
-  margin-top: 4px;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1.5px solid #ced4da;
-}
-
-.footer-email-row input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 11px 14px;
-  font-size: 12.5px;
-  background: #fff;
-  color: #343a40;
-  font-family: inherit;
-}
-
-.footer-email-row input::placeholder {
-  color: #adb5bd;
-}
-
-.footer-email-row button {
-  border: none;
-  background: #1a3c5e;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  padding: 11px 18px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-
-.footer-email-row button:hover {
-  background: #132d47;
-}
-
-/* ── DIVIDER ─────────────────────────────────── */
-.footer-divider {
+  justify-content: center;
+  gap: 32px;
   width: 100%;
-  height: 1px;
-  background: #ced4da;
-  margin: 0;
+  margin: 20px 0;
+  margin-top: 20px;
 }
 
-/* ── ROW 2: bottom ───────────────────────────── */
-.footer-bottom-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 24px;
-  flex-wrap: wrap;
-  gap: 16px;
+.footer-links-row a {
+  text-decoration: none;
+  color: #6C757D;
+  font-family: 'Nimbus Sans L', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.footer-links-row a:hover {
+  color: #343a40;
 }
 
 .footer-copyright-text {
-  color: #94a3b8;
+  color: #94A3B8;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  font-family: "SF UI Text", "DM Sans", sans-serif;
-}
-
-/* Social icons */
-.footer-social-row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.footer-social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #fff;
-  color: #6c757d;
-  border: 1.5px solid #dee2e6;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.footer-social-btn:hover {
-  background: #1a3c5e;
-  color: #fff;
-  border-color: #1a3c5e;
-  transform: translateY(-2px);
-}
-
-/* ── RESPONSIVE ─────────────────────────────── */
-@media (max-width: 900px) {
-  .footer-top-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .footer-newsletter {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer-top-row {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .footer-nav-cols {
-    gap: 24px;
-  }
-
-  .footer-bottom-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .footer-tagline {
-    max-width: 100%;
-  }
+  font-weight: bold;
+  font-family: "SF UI text", sans-serif;
+  margin-top: 10px; 
+  text-align: center;
+  width: 100%;
 }

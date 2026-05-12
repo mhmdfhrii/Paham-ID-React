@@ -565,3 +565,28 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+/* Hilangkan warna biru pada sidebar link */
+.more-link-wrapper {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.more-link-wrapper:visited {
+  color: inherit !important;
+}
+
+.more-item-title {
+  color: #2d3748; /* Warna teks gelap */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.more-link-wrapper:hover .more-item-title {
+  color: #1a3a5c; /* Berubah jadi navy pas di-hover */
+}

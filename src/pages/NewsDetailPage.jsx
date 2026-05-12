@@ -14,6 +14,11 @@ export default function NewsDetailPage() {
   // id dari URL adalah string, data juga sudah string — cocok
   const article = allNewsData.find((item) => item.id === id);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsFullArticle(false); // Reset tombol 'View Full' ke posisi awal
+  }, [id]);
+
   if (!article) return <div className="error-msg">Artikel Tidak Ditemukan</div>;
 
   return (
@@ -95,7 +100,7 @@ export default function NewsDetailPage() {
         <aside className="sidebar">
           <PopularSidebar />
           <AuthSidebar />
-          <SidebarMore category={article.category} />
+          <SidebarMore category={article.category} currentId={article.id} />
         </aside>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import MainTrending from "../components/MainTrending";
 import Main from "../components/Main";
 import Newsletter from "../components/Newsletter";
+import "../styles/globals.css";
 
 export default function HomePage() {
   return (
